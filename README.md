@@ -97,6 +97,7 @@ entirely in your browser.
 
 ### Diagnostics
 
+- [Burned Inbox Checker](https://burnedinbox.com) — Find whether a domain or inbox is burned, deep DNS plus placement analysis, before sending another campaign through it
 - [Blacklist Checker](https://warminboxes.com/blacklist-checker) **API** — Domain/IP against 20+ blacklists
 - [Bounce Analyzer](https://warminboxes.com/bounce-analyzer) — Paste NDRs/SMTP codes for plain-English root cause plus a pause-or-continue calculator
 - [Deliverability Checker](https://warminboxes.com/deliverability-checker) **API** — A-F domain grade across SPF, DKIM, DMARC, MX, blacklists, domain age
