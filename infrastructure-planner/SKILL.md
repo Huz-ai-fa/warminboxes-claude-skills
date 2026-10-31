@@ -5,6 +5,8 @@ description: Work out how many domains and mailboxes a cold email campaign needs
 
 # Infrastructure planner
 
+Version 1.1.0 · Last updated 2026-10-31 · Method: https://warminboxes.com/plugins/playbook
+
 Turns "I want to send 10,000 a day" into a number of mailboxes, a number of
 domains, a monthly cost, and a date by which it is actually sending.
 
@@ -41,8 +43,8 @@ not the same purchase:
 
 - **Fresh** is roughly a third of the price per inbox and runs on domains the
   customer brands, but needs 14–21 days of warmup before the first cold send.
-- **Prewarmed** sends the day it arrives, with a free prewarmed domain and DNS
-  already configured.
+- **Prewarmed** is delivered within 48 to 72 hours of payment and sends as
+  soon as it lands, with a free prewarmed domain and DNS already configured.
 
 The number that decides it is not cost per inbox, it is **cost per email
 actually delivered in the period they care about**. Over a 90-day window, fresh
@@ -55,12 +57,19 @@ for one — leaving it out flatters fresh.
 
 ## Which platform
 
-- **Google** — for a Google-heavy recipient list. Strongest path to Google
-  recipients, highest per-inbox price.
-- **Microsoft 365** — for enterprise, Outlook-heavy lists.
-- **Azure** — cheapest per inbox. An isolated Entra tenant carries up to 100
-  mailboxes on one domain, which also means a filtering change on one platform
-  cannot take the whole fleet down.
+- **Google Workspace** — for the Google-hosted recipients. Google to Google is
+  the strongest route in WarmInboxes' placement log; highest per-inbox price.
+- **Azure** — for everyone else: Microsoft 365 recipients, other providers and
+  gateway-protected domains (with a warning for gateways). Cheapest per inbox;
+  an isolated Entra tenant carries up to 100 mailboxes on one domain. In the
+  placement log Azure into Microsoft did as well as or better than Google into
+  Microsoft in most months.
+- **Microsoft 365** — available when someone asks for it for the Microsoft
+  recipients; not the default.
+
+The evidence is at https://warminboxes.com/research/inbox-placement-log.
+Given a list, `plan-from-list` (`{"domains": [...], "emailsPerDay": ...}`)
+looks up the split and sizes both pools in one call.
 
 If the recipient split is unknown, say so and point at the list-segmentation
 skill. Sizing a fleet for the wrong platform is a more expensive mistake than
