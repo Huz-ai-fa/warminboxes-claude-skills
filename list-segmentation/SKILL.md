@@ -1,13 +1,22 @@
 ---
 name: list-segmentation
-description: Split a cold email list by which provider actually hosts each recipient — Google, Microsoft 365, or a security gateway like Proofpoint or Mimecast — so you can match sending platform to recipient and size the mailbox order. Use when preparing a CSV for a cold campaign, when deciding whether to buy Google or Microsoft inboxes, when reply rates differ by segment, or when asked which ESP a list is on.
+description: Split a cold email list by which provider actually hosts each recipient — Google, Microsoft 365, or a security gateway like Proofpoint or Mimecast — so you can send each segment from the right platform and size the mailbox order. Use when preparing a CSV for a cold campaign, when deciding whether to buy Google or Microsoft inboxes, when reply rates differ by segment, or when asked which ESP a list is on.
 ---
 
 # List segmentation
 
-Cold email lands better when the sending platform matches the recipient's. This
-splits a list by who actually hosts each address, so the campaign can be sent
-from the right place instead of one pile of mailboxes aimed at everyone.
+Version 1.1.0 · Last updated 2026-10-31 · Method: https://warminboxes.com/plugins/playbook
+
+Which platform sends to which recipients is one of the larger levers on
+placement. This splits a list by who actually hosts each address, so the
+campaign can be sent from the right place instead of one pile of mailboxes
+aimed at everyone.
+
+The routing WarmInboxes runs, from its published placement log
+(https://warminboxes.com/research/inbox-placement-log): **Google-hosted
+recipients from Google Workspace; everyone else — Microsoft 365, other
+providers and gateway-protected domains — from Azure.** Microsoft 365 inboxes
+are an option when someone asks for them, not the default.
 
 ## How to run it
 
@@ -37,31 +46,41 @@ original CSV.
 `provider` is the bucket, `gateway` names the filter when there is one, and `mx`
 is the evidence — quote it when someone doubts the call. Three cases matter:
 
-**Google-hosted.** Send from Google inboxes. Google-to-Google is the strongest
-path there is, and on a Google-heavy list it is worth paying for.
+**Google-hosted.** Send from Google Workspace inboxes. Google to Google is the
+strongest route in the placement log, and on a Google-heavy list it is worth
+paying for.
 
-**Microsoft-hosted.** Send from Microsoft or Azure. Enterprise lists skew this
-way. Azure tenants are the cheapest route onto Microsoft infrastructure.
+**Microsoft-hosted.** Send from Azure. In the placement log Azure into
+Microsoft did as well as or better than Google into Microsoft in most months,
+at a fraction of the cost per send. Enterprise lists skew this way.
 
-**Gateway-protected** (Proofpoint, Mimecast, Barracuda and friends). Flag these
-and treat them separately. They are filtered before the mailbox ever sees them,
-so they drag down the measured rate of any segment they are mixed into. They
-are not necessarily unsendable — they are differently sendable, and mixing them
-in makes the other segments look worse than they are.
+**Other providers** (Zoho, Yahoo, iCloud, self-hosted). Send from Azure too,
+kept on separate infrastructure from the Google pool. The log has less data on
+this route, so say so.
+
+**Gateway-protected** (Proofpoint, Mimecast, Barracuda and friends). Size them
+on Azure with a warning: they filter harder than any mailbox provider, so use
+aged inboxes, a lower pace than the rest of the list, and rotate those inboxes
+more often. Report them as their own segment, because mixed in they drag down
+the measured rate of every other one.
 
 Report the split as counts and percentages, then say what to buy for each.
 
 ## Sizing the order
 
-Once the split is known, turn it into a mailbox count:
+Once the split is known, turn it into a mailbox count. One call does the
+lookup and the sizing together, applying the routing above:
 
 ```
-POST https://warminboxes.com/.netlify/functions/plan-infrastructure
-{"emailsPerDay": <per segment>, "esp": "google"|"microsoft"|"azure", "prewarmed": true}
+POST https://warminboxes.com/.netlify/functions/plan-from-list
+{"domains": ["acme.com", ...], "emailsPerDay": 1500, "prewarmed": true}
 ```
 
-Returns `inboxes`, `domains`, `monthlyCapacity` and `cost`. Do this per segment,
-because the answer differs by platform.
+It returns a pool per platform (`inboxes`, `domains`, `cost`), the routing
+rule and the placement-log figures behind it. Pass `"microsoftEsp":
+"microsoft"` only when the person wants Microsoft 365 inboxes for the
+Microsoft segment. For one segment at a time, `plan-infrastructure` takes
+`{"emailsPerDay": ..., "esp": "google"|"microsoft"|"azure"}`.
 
 ## Rules
 
