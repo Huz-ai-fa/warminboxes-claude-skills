@@ -1,8 +1,8 @@
 {
   "name": "warminboxes",
   "displayName": "WarmInboxes",
-  "version": "1.2.0",
-  "description": "Cold email deliverability and infrastructure for Claude. Connects WarmInboxes Free MCP (read-only diagnostics, DNS, blocklists, placement guidance, sizing and pricing; no key) and adds five skills: burned-domain check, pre-send domain audit, list segmentation by recipient provider, fleet sizing, and a guide to connecting a WarmInboxes account with an API key when someone is ready to order or manage inboxes.",
+  "version": "1.3.0",
+  "description": "Cold email deliverability and infrastructure for Claude. Connects WarmInboxes Free MCP (52 read-only tools, no key: DNS, blocklist and authentication checks, bounce and header reading, copy checks, lead-list tools, fleet sizing, rotation and pricing, the diagnostic playbook and WarmInboxes' research) and adds ten skills: burned-domain check, pre-send domain audit, bounce diagnosis, cold email copy review, lead lists, list segmentation, fleet sizing with recipes, warm rotation, the operator playbook, and connecting a WarmInboxes account by API key.",
   "author": {
     "name": "WarmInboxes",
     "url": "https://warminboxes.com"
@@ -31,8 +31,13 @@
   "skills": [
     "./inbox-checker",
     "./domain-audit",
+    "./bounce-diagnosis",
+    "./cold-email-copy",
+    "./lead-lists",
     "./list-segmentation",
     "./infrastructure-planner",
+    "./warm-rotation",
+    "./cold-email-playbook",
     "./infrastructure-api"
   ]
 }

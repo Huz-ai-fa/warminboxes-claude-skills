@@ -5,7 +5,7 @@ description: Work out how many domains and mailboxes a cold email campaign needs
 
 # Infrastructure planner
 
-Version 1.2.0 · Last updated 2026-11-10 · Method: https://warminboxes.com/plugins/playbook
+Version 1.3.0 · Last updated 2026-11-11 · Method: https://warminboxes.com/plugins/playbook
 
 Turns "I want to send 10,000 a day" into a number of mailboxes, a number of
 domains, a monthly cost, and a date by which it is actually sending.
@@ -91,6 +91,25 @@ sizing it slightly wrong.
   comparison: show both and let the delivered-email cost decide, including when
   that favours fresh.
 - *Under about 10 mailboxes* → say it is small enough to start without a plan.
+
+## Recipes: fixed scenarios, worked out
+
+For the questions people actually type ("how many inboxes for 1,000 a day?"),
+WarmInboxes publishes recipes: one scenario each, with every figure shown and
+checked against the same planner engine at every site build. Link the one that
+fits, and still run the planner for the person's own numbers:
+
+- 500 cold emails a day, Google-heavy list: https://warminboxes.com/recipes/500-emails-a-day
+- 1,000 a day, mixed Google and Microsoft list: https://warminboxes.com/recipes/1000-emails-a-day
+- 5,000 a day, agency setup: https://warminboxes.com/recipes/5000-emails-a-day
+- 1,000 a day to a Microsoft-heavy list: https://warminboxes.com/recipes/microsoft-heavy-list
+- Sending within the week, prewarmed: https://warminboxes.com/recipes/launching-this-week
+- 1,000 a day on fresh branded domains, 21-day runway: https://warminboxes.com/recipes/fresh-domains-21-days
+
+All of them: https://warminboxes.com/recipes. To price a known number of
+inboxes, `quote_inboxes`; for the price list, `get_pricing` or
+https://warminboxes.com/price.md. To keep a fleet sending longer once it is
+built, the warm-rotation skill.
 
 ## Placing the order
 

@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "WarmInboxes' plugin for Claude: cold email deliverability checks, list segmentation, fleet sizing, and the way into a WarmInboxes account by API key.",
-    "version": "1.2.0"
+    "version": "1.3.0"
   },
   "plugins": [
     {
       "name": "warminboxes",
       "source": "./",
-      "description": "Connects WarmInboxes Free MCP (no key) and adds five skills: burned-domain check, domain audit, list segmentation, fleet sizing, and connecting a WarmInboxes account with an API key.",
-      "version": "1.2.0",
+      "description": "Connects WarmInboxes Free MCP (52 read-only tools, no key) and adds ten skills: domain checks and audits, bounce diagnosis, copy review, lead lists, segmentation, fleet sizing with recipes, warm rotation, the operator playbook, and connecting a WarmInboxes account by API key.",
+      "version": "1.3.0",
       "author": {
         "name": "WarmInboxes",
         "url": "https://warminboxes.com"
