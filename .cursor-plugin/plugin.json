@@ -1,21 +1,39 @@
 {
   "name": "warminboxes",
   "displayName": "WarmInboxes",
-  "version": "1.2.0",
-  "description": "Cold email deliverability and infrastructure in Cursor. Connects WarmInboxes Free MCP (read-only DNS, blocklist, authentication and copy checks, list tools, fleet sizing and pricing; no key) and adds five skills: burned-domain check, pre-send domain audit, list segmentation by recipient provider, fleet sizing, and connecting a WarmInboxes account by API key.",
+  "version": "1.3.0",
+  "description": "Cold email deliverability and infrastructure in Cursor. Connects WarmInboxes Free MCP (52 read-only tools, no key: DNS, blocklist and authentication checks, bounce and header reading, copy checks, lead-list tools, fleet sizing, rotation and pricing, the diagnostic playbook and WarmInboxes' research) and adds ten skills: burned-domain check, pre-send domain audit, bounce diagnosis, cold email copy review, lead lists, list segmentation, fleet sizing with recipes, warm rotation, the operator playbook, and connecting a WarmInboxes account by API key.",
   "author": {
     "name": "WarmInboxes"
   },
   "homepage": "https://warminboxes.com/skills",
   "repository": "https://github.com/Huz-ai-fa/warminboxes-claude-skills",
   "license": "MIT",
-  "keywords": ["cold-email", "deliverability", "email", "dns", "spf", "dkim", "dmarc", "blacklist", "inboxes", "google-workspace", "azure", "mcp"],
+  "keywords": [
+    "cold-email",
+    "deliverability",
+    "email",
+    "dns",
+    "spf",
+    "dkim",
+    "dmarc",
+    "blacklist",
+    "inboxes",
+    "google-workspace",
+    "azure",
+    "mcp"
+  ],
   "logo": ".claude-plugin/icon.png",
   "skills": [
     "./inbox-checker",
     "./domain-audit",
+    "./bounce-diagnosis",
+    "./cold-email-copy",
+    "./lead-lists",
     "./list-segmentation",
     "./infrastructure-planner",
+    "./warm-rotation",
+    "./cold-email-playbook",
     "./infrastructure-api"
   ],
   "rules": "./rules",

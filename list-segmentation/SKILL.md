@@ -5,7 +5,7 @@ description: Split a cold email list by which provider actually hosts each recip
 
 # List segmentation
 
-Version 1.2.0 · Last updated 2026-11-10 · Method: https://warminboxes.com/plugins/playbook
+Version 1.3.0 · Last updated 2026-11-11 · Method: https://warminboxes.com/plugins/playbook
 
 Which platform sends to which recipients is one of the larger levers on
 placement. This splits a list by who actually hosts each address, so the

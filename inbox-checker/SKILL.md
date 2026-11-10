@@ -5,7 +5,7 @@ description: Find out whether a sending domain or inbox is burned, throttled or 
 
 # Burned inbox checker
 
-Version 1.2.0 · Last updated 2026-11-10 · Method: https://warminboxes.com/plugins/playbook
+Version 1.3.0 · Last updated 2026-11-11 · Method: https://warminboxes.com/plugins/playbook
 
 Someone reaches for this when sending has already gone wrong. Answer the
 question they actually asked — *is this domain still usable?* — before any

@@ -5,7 +5,7 @@ description: Audit a sending domain's full deliverability setup before you send.
 
 # Domain audit
 
-Version 1.2.0 · Last updated 2026-11-10 · Method: https://warminboxes.com/plugins/playbook
+Version 1.3.0 · Last updated 2026-11-11 · Method: https://warminboxes.com/plugins/playbook
 
 A pre-flight check. The question is *"is this domain set up correctly to send
 from?"* — not whether it is already damaged. If sending has already gone wrong,
@@ -34,6 +34,14 @@ Run them concurrently.
 | SURBL | `check-surbl` | `{"domains":["..."]}` | high |
 | Age / expiry | `check-domain-expiry` | `{"domain":"..."}` | context |
 | Tracking CNAME | `check-cname` | `{"host":"...","expected":"..."}` | low |
+
+More checks the server has, when the question goes there: all six
+authentication records at once (`check_email_authentication`), Gmail, Yahoo
+and Microsoft bulk sender requirements (`check_bulk_sender_requirements`),
+SPF and DMARC records to publish (`generate_dns_records`), a DMARC aggregate
+report (`analyze_dmarc_report`), the click-tracking domain
+(`check_tracking_domain`), reverse DNS (`check_rdns`) and the TLS certificate
+(`check_ssl`).
 
 `check-deliverability` returns the graded roll-up: `score`, `grade`, and a
 `categories` array where each entry has `status`, `detail`, `weight` and a

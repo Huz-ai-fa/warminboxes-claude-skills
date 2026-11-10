@@ -5,7 +5,7 @@ description: Guide someone from the free WarmInboxes tools to their own WarmInbo
 
 # WarmInboxes Infrastructure MCP and API
 
-Version 1.2.0 · Last updated 2026-11-10 · Reference: https://docs.warminboxes.com
+Version 1.3.0 · Last updated 2026-11-11 · Reference: https://docs.warminboxes.com
 
 This is the step after the free tools. WarmInboxes Free MCP, which this plugin
 connects, is read-only and needs no key: it diagnoses domains, sizes fleets and
