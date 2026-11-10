@@ -1,5 +1,6 @@
 {
   "name": "warminboxes",
+  "displayName": "WarmInboxes",
   "version": "1.2.0",
   "description": "Cold email deliverability and infrastructure for Claude. Connects WarmInboxes Free MCP (read-only diagnostics, DNS, blocklists, placement guidance, sizing and pricing; no key) and adds five skills: burned-domain check, pre-send domain audit, list segmentation by recipient provider, fleet sizing, and a guide to connecting a WarmInboxes account with an API key when someone is ready to order or manage inboxes.",
   "author": {
@@ -8,8 +9,11 @@
   },
   "homepage": "https://warminboxes.com/skills",
   "repository": "https://github.com/Huz-ai-fa/warminboxes-claude-skills",
+  "documentationUrl": "https://warminboxes.com/skills",
+  "supportUrl": "https://warminboxes.com/consultation",
   "license": "MIT",
   "privacyPolicyUrl": "https://warminboxes.com/privacy",
+  "termsOfServiceUrl": "https://warminboxes.com/terms",
   "keywords": [
     "cold-email",
     "deliverability",

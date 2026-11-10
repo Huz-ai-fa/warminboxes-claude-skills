@@ -1,5 +1,6 @@
 {
   "name": "warminboxes-account",
+  "displayName": "WarmInboxes Account",
   "version": "1.0.0",
   "description": "Connects your own WarmInboxes account to Claude Code through WarmInboxes Infrastructure MCP: follow builds, check billing and nameservers, export finished inboxes to your sequencer, and preview and place orders. Asks for your API key at install and keeps it in your system's secure credential store.",
   "author": {
@@ -8,9 +9,17 @@
   },
   "homepage": "https://docs.warminboxes.com",
   "repository": "https://github.com/Huz-ai-fa/warminboxes-claude-skills",
+  "documentationUrl": "https://docs.warminboxes.com",
+  "supportUrl": "https://warminboxes.com/consultation",
   "license": "MIT",
   "privacyPolicyUrl": "https://warminboxes.com/privacy",
-  "keywords": ["cold-email", "inboxes", "infrastructure", "mcp"],
+  "termsOfServiceUrl": "https://warminboxes.com/terms",
+  "keywords": [
+    "cold-email",
+    "inboxes",
+    "infrastructure",
+    "mcp"
+  ],
   "userConfig": {
     "wib_api_key": {
       "type": "string",
