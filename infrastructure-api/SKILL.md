@@ -93,25 +93,26 @@ A live key looks like `wib_<prefix>_<secret>`; a test key `wib_test_<prefix>_<se
 
 ## Connecting it
 
-Give the person the block for their client. The server id
-`warminboxes-infrastructure` is the conventional one; keep it, so it sits
-beside `warminboxes-free` from this plugin without confusion.
+The server id `warminboxes-infrastructure` is the conventional one; keep it,
+so it sits beside `warminboxes-free` without confusion.
 
-**Claude Code** (in their own terminal, not through Claude):
+**Claude Code: the account plugin (preferred).** The same marketplace has a
+second plugin, `warminboxes-account`, that connects WarmInboxes Infrastructure
+MCP and asks for the key itself. The person runs, in Claude Code:
 
-```sh
-export WIB_API_KEY=wib_your_key_here   # or set it in your shell profile
-claude mcp add --transport http warminboxes-infrastructure https://api.warminboxes.com/mcp \
-  --header "Authorization: Bearer $WIB_API_KEY"
+```
+/plugin install warminboxes-account@warminboxes
 ```
 
-Then restart Claude Code, or run `/mcp`, and check that
-`warminboxes-infrastructure` shows as connected.
+Claude Code opens a masked field for the key and keeps it in the system's
+secure credential store, not in a settings file and not in this chat. To
+change it later: `/plugin configure warminboxes-account@warminboxes`. Then
+`/mcp` should show `warminboxes-infrastructure` as connected. Never offer to
+type the key in for them.
 
-**Cursor, and other clients with a JSON config that takes a URL and headers**
-(per the WarmInboxes reference, Claude Desktop is one; if their Desktop
-version's config file only accepts command-based servers, use the bridge
-below):
+**Cursor, Claude Desktop and other clients with a JSON config that takes a URL
+and headers:** the person pastes their key in place of the placeholder in
+their own config file:
 
 ```json
 {
@@ -124,37 +125,15 @@ below):
 }
 ```
 
-**A client that only runs command-based servers**, through the open-source
-`mcp-remote` bridge, with the key in the environment rather than the
-arguments:
-
-```json
-{
-  "mcpServers": {
-    "warminboxes-infrastructure": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://api.warminboxes.com/mcp",
-               "--header", "Authorization:${WIB_AUTH}"],
-      "env": { "WIB_AUTH": "Bearer wib_your_key_here" }
-    }
-  }
-}
-```
-
 **Connector settings that only offer a sign-in button** (OAuth) have no field
 for an API key, so the Infrastructure MCP cannot be added there. Say so, and
-offer Claude Code, a JSON-config client, the `wib` CLI or the app itself.
+offer Claude Code, a JSON-config client or the app itself.
 
-**No MCP at all: the CLI.** One Python 3 file, no install:
+**Other routes** (the `wib` command line, a client that only runs
+command-based servers): point the person to https://docs.warminboxes.com,
+which has the current steps. Do not run downloads or installs for them.
 
-```sh
-curl -fsSL https://api.warminboxes.com/v1/cli -o wib && chmod +x wib
-export WIB_API_KEY=wib_your_key_here
-./wib dashboard
-```
-
-**Checking it worked:** call `get_dashboard` (or `./wib dashboard`, or
-`GET /v1/portal/dashboard`). A 401 means the key was not sent, not
+**Checking it worked:** call `get_dashboard` (or `GET /v1/portal/dashboard`). A 401 means the key was not sent, not
 recognised or revoked: have them check the `Bearer ` prefix and that the whole
 key was copied. A 403 names the scope the key lacks. A test key's answers say
 they come from the sandbox, `place_order` included; say so when you report

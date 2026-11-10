@@ -60,13 +60,16 @@ orders on your card) goes through **WarmInboxes Infrastructure MCP** at
 2. **Make a key** in the app: Settings → API keys. Pick only the scopes you
    need (`read`, `write`, `orders:place`). Switch on "Test key" first to try
    everything against a sandbox that charges and builds nothing.
-3. **Connect it in your own terminal**, never by pasting the key into a chat:
+3. **Connect it.** In Claude Code, install the account plugin from the same
+   marketplace:
 
-   ```sh
-   export WIB_API_KEY=wib_your_key_here
-   claude mcp add --transport http warminboxes-infrastructure https://api.warminboxes.com/mcp \
-     --header "Authorization: Bearer $WIB_API_KEY"
    ```
+   /plugin install warminboxes-account@warminboxes
+   ```
+
+   It asks for the key in a masked field and keeps it in your system's secure
+   credential store. Never paste a key into a chat. Other clients and the
+   `wib` command line: https://docs.warminboxes.com.
 
 4. Ask Claude for your dashboard. Before any order, Claude previews it, shows
    you the price and waits for your yes.
