@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "warminboxes-infrastructure": {
+      "type": "http",
+      "url": "https://api.warminboxes.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.wib_api_key}"
+      }
+    }
+  }
+}

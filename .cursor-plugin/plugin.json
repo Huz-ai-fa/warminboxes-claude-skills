@@ -1,0 +1,23 @@
+{
+  "name": "warminboxes",
+  "displayName": "WarmInboxes",
+  "version": "1.2.0",
+  "description": "Cold email deliverability and infrastructure in Cursor. Connects WarmInboxes Free MCP (read-only DNS, blocklist, authentication and copy checks, list tools, fleet sizing and pricing; no key) and adds five skills: burned-domain check, pre-send domain audit, list segmentation by recipient provider, fleet sizing, and connecting a WarmInboxes account by API key.",
+  "author": {
+    "name": "WarmInboxes"
+  },
+  "homepage": "https://warminboxes.com/skills",
+  "repository": "https://github.com/Huz-ai-fa/warminboxes-claude-skills",
+  "license": "MIT",
+  "keywords": ["cold-email", "deliverability", "email", "dns", "spf", "dkim", "dmarc", "blacklist", "inboxes", "google-workspace", "azure", "mcp"],
+  "logo": ".claude-plugin/icon.png",
+  "skills": [
+    "./inbox-checker",
+    "./domain-audit",
+    "./list-segmentation",
+    "./infrastructure-planner",
+    "./infrastructure-api"
+  ],
+  "rules": "./rules",
+  "mcpServers": "./mcp.json"
+}

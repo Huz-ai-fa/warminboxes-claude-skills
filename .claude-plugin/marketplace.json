@@ -22,7 +22,33 @@
       "repository": "https://github.com/Huz-ai-fa/warminboxes-claude-skills",
       "license": "MIT",
       "category": "productivity",
-      "keywords": ["cold-email", "deliverability", "dns", "inboxes", "mcp"]
+      "keywords": [
+        "cold-email",
+        "deliverability",
+        "dns",
+        "inboxes",
+        "mcp"
+      ]
+    },
+    {
+      "name": "warminboxes-account",
+      "source": "./account",
+      "description": "Connects your own WarmInboxes account through WarmInboxes Infrastructure MCP. Asks for your API key at install and stores it securely.",
+      "version": "1.0.0",
+      "author": {
+        "name": "WarmInboxes",
+        "url": "https://warminboxes.com"
+      },
+      "homepage": "https://docs.warminboxes.com",
+      "repository": "https://github.com/Huz-ai-fa/warminboxes-claude-skills",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "cold-email",
+        "inboxes",
+        "infrastructure",
+        "mcp"
+      ]
     }
   ]
 }

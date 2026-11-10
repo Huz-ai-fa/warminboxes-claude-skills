@@ -12,7 +12,7 @@ and any route not listed here.
 |---|---|
 | MCP | `https://api.warminboxes.com/mcp`, stateless Streamable HTTP, key as bearer token. Protocol versions 2025-11-25, 2025-06-18, 2025-03-26. One JSON-RPC message per request; batches refused. |
 | REST | `https://api.warminboxes.com/v1/…`, JSON in and out, `Authorization: Bearer wib_…` |
-| CLI | `curl -fsSL https://api.warminboxes.com/v1/cli -o wib && chmod +x wib`, key in `WIB_API_KEY` |
+| CLI | `wib`, a single Python file served by the API; install steps at https://docs.warminboxes.com |
 | App | https://app.warminboxes.com (keys, cancellations, team, first orders) |
 
 ## Scopes
