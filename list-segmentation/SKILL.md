@@ -5,7 +5,7 @@ description: Split a cold email list by which provider actually hosts each recip
 
 # List segmentation
 
-Version 1.1.0 · Last updated 2026-10-31 · Method: https://warminboxes.com/plugins/playbook
+Version 1.2.0 · Last updated 2026-11-10 · Method: https://warminboxes.com/plugins/playbook
 
 Which platform sends to which recipients is one of the larger levers on
 placement. This splits a list by who actually hosts each address, so the
@@ -19,6 +19,10 @@ providers and gateway-protected domains — from Azure.** Microsoft 365 inboxes
 are an option when someone asks for them, not the default.
 
 ## How to run it
+
+If WarmInboxes Free MCP (https://warminboxes.com/mcp) is connected, as it is
+when these skills are installed as the `warminboxes` plugin, use its
+`segment_esp` and `plan_from_list` tools. Otherwise:
 
 ```
 POST https://warminboxes.com/.netlify/functions/segment-esp

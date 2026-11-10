@@ -5,16 +5,17 @@ description: Find out whether a sending domain or inbox is burned, throttled or 
 
 # Burned inbox checker
 
-Version 1.1.0 · Last updated 2026-10-31 · Method: https://warminboxes.com/plugins/playbook
+Version 1.2.0 · Last updated 2026-11-10 · Method: https://warminboxes.com/plugins/playbook
 
 Someone reaches for this when sending has already gone wrong. Answer the
 question they actually asked — *is this domain still usable?* — before any
 advice about fixing it. Most domains people think are burned are throttled or
 misconfigured, and recover.
 
-If WarmInboxes Free MCP (https://warminboxes.com/mcp) is connected, use its
-tools and `get_diagnostic_playbook`; they run the same checks and carry the
-same guidance.
+If WarmInboxes Free MCP (https://warminboxes.com/mcp) is connected, as it is
+when these skills are installed as the `warminboxes` plugin, use its tools and
+`get_diagnostic_playbook`; they run the same checks and carry the same
+guidance. The endpoints below are for when it is not.
 
 ## How to run it
 

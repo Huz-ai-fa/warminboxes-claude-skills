@@ -1,0 +1,28 @@
+{
+  "name": "warminboxes",
+  "owner": {
+    "name": "WarmInboxes",
+    "url": "https://warminboxes.com"
+  },
+  "metadata": {
+    "description": "WarmInboxes' plugin for Claude: cold email deliverability checks, list segmentation, fleet sizing, and the way into a WarmInboxes account by API key.",
+    "version": "1.2.0"
+  },
+  "plugins": [
+    {
+      "name": "warminboxes",
+      "source": "./",
+      "description": "Connects WarmInboxes Free MCP (no key) and adds five skills: burned-domain check, domain audit, list segmentation, fleet sizing, and connecting a WarmInboxes account with an API key.",
+      "version": "1.2.0",
+      "author": {
+        "name": "WarmInboxes",
+        "url": "https://warminboxes.com"
+      },
+      "homepage": "https://warminboxes.com/skills",
+      "repository": "https://github.com/Huz-ai-fa/warminboxes-claude-skills",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["cold-email", "deliverability", "dns", "inboxes", "mcp"]
+    }
+  ]
+}
