@@ -1,4 +1,4 @@
-# WarmInboxes plugin and skills for Claude
+# WarmInboxes plugin and skills for Claude and Cursor
 
 Cold email infrastructure work, done by Claude directly: check whether a
 domain is burned, audit one before you send from it, split a list by the
@@ -19,6 +19,14 @@ Or in one step on Claude Code 2.1.275 or later:
 ```
 /plugin install warminboxes --marketplace Huz-ai-fa/warminboxes-claude-skills
 ```
+
+## Install the plugin (Cursor)
+
+The same repo is a Cursor plugin (`.cursor-plugin/plugin.json`): the five
+skills, WarmInboxes Free MCP from `mcp.json`, and one rule in `rules/` that
+keeps the agent reporting what the tools returned and API keys out of chat.
+Once it is listed, install it from the Cursor Marketplace; until then, add
+this repository as a plugin from Cursor's plugin settings.
 
 The plugin brings two things:
 
