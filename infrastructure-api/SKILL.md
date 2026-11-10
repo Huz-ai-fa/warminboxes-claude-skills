@@ -18,7 +18,8 @@ account and an API key. The REST API (`https://api.warminboxes.com/v1`) and the
 `wib` command line are the same thing by other routes, with the same key and
 rules.
 
-The full reference is https://docs.warminboxes.com, mirrored as plain text at
+The full reference is https://docs.warminboxes.com, as plain text at
+https://docs.warminboxes.com/llms.txt and mirrored at
 https://warminboxes.com/transactional-api.md. When a detail here and the docs
 differ, the docs are right; fetch the text version when you need a field, a
 status or a route this file does not cover.
@@ -54,6 +55,12 @@ This is the one rule that does not bend.
 - **Do not run the connect command for them with the key in it**, and do not
   echo, `cat` or print a config file or environment variable that holds one.
   Give the command; they run it in their own terminal.
+- **A key is a password.** Anyone holding it can do what its scopes allow on
+  the account. It never goes in a web page, a mobile app or a public
+  repository (a committed `.mcp.json` included); it lives in their shell's
+  environment, a server, or a client config that stays on their machine. The
+  key list in the app shows when each key was last used: one nobody has used
+  in months is one to revoke.
 - The same goes for **sequencer passwords and registrar passwords**. There is
   deliberately no MCP tool for saving a sequencer login, so the password never
   passes through an assistant. Logins are saved in the app, or by the person
@@ -147,9 +154,15 @@ export WIB_API_KEY=wib_your_key_here
 ```
 
 **Checking it worked:** call `get_dashboard` (or `./wib dashboard`, or
-`GET /v1/portal/dashboard`). A 401 means the key is missing, mistyped or
-revoked; a 403 names the scope the key lacks. A test key's answers say they
-come from the sandbox; say so when you report them.
+`GET /v1/portal/dashboard`). A 401 means the key was not sent, not
+recognised or revoked: have them check the `Bearer ` prefix and that the whole
+key was copied. A 403 names the scope the key lacks. A test key's answers say
+they come from the sandbox, `place_order` included; say so when you report
+them.
+
+The docs name the server `warminboxes` in their snippets; the id is only a
+local label, so either works. Use `warminboxes-infrastructure` here so it
+cannot be confused with this plugin's `warminboxes-free`.
 
 The two servers do different jobs. Keep diagnosing with WarmInboxes Free MCP
 (`check_deliverability`, `plan_infrastructure` and the rest) and act on the

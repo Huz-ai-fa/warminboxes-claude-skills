@@ -1,9 +1,10 @@
 # WarmInboxes Infrastructure MCP: quick reference
 
-Condensed from the WarmInboxes API reference (https://docs.warminboxes.com,
-plain text at https://warminboxes.com/transactional-api.md, published
-2026-10-15). The docs are authoritative; fetch them for request bodies, the
-checkout format and any route not listed here.
+Condensed from the WarmInboxes API reference at https://docs.warminboxes.com
+(plain text at https://docs.warminboxes.com/llms.txt, mirrored at
+https://warminboxes.com/transactional-api.md), read 2026-11-10. The docs are
+authoritative; fetch the plain text for request bodies, the checkout format
+and any route not listed here.
 
 ## Surfaces
 
