@@ -5,13 +5,17 @@ description: Audit a sending domain's full deliverability setup before you send.
 
 # Domain audit
 
-Version 1.1.0 · Last updated 2026-10-31 · Method: https://warminboxes.com/plugins/playbook
+Version 1.2.0 · Last updated 2026-11-10 · Method: https://warminboxes.com/plugins/playbook
 
 A pre-flight check. The question is *"is this domain set up correctly to send
 from?"* — not whether it is already damaged. If sending has already gone wrong,
 the inbox-checker skill is the right one.
 
 ## How to run it
+
+If WarmInboxes Free MCP (https://warminboxes.com/mcp) is connected, as it is
+when these skills are installed as the `warminboxes` plugin, use its tools of
+the same names (`check_deliverability`, `check_spf` and so on). Otherwise:
 
 `POST https://warminboxes.com/.netlify/functions/<name>`, JSON body, no API key.
 Run them concurrently.

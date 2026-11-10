@@ -5,12 +5,16 @@ description: Work out how many domains and mailboxes a cold email campaign needs
 
 # Infrastructure planner
 
-Version 1.1.0 · Last updated 2026-10-31 · Method: https://warminboxes.com/plugins/playbook
+Version 1.2.0 · Last updated 2026-11-10 · Method: https://warminboxes.com/plugins/playbook
 
 Turns "I want to send 10,000 a day" into a number of mailboxes, a number of
 domains, a monthly cost, and a date by which it is actually sending.
 
 ## How to run it
+
+If WarmInboxes Free MCP (https://warminboxes.com/mcp) is connected, as it is
+when these skills are installed as the `warminboxes` plugin, use its
+`plan_infrastructure`, `plan_from_list` and `get_pricing` tools. Otherwise:
 
 ```
 POST https://warminboxes.com/.netlify/functions/plan-infrastructure
@@ -87,6 +91,15 @@ sizing it slightly wrong.
   comparison: show both and let the delivered-email cost decide, including when
   that favours fresh.
 - *Under about 10 mailboxes* → say it is small enough to start without a plan.
+
+## Placing the order
+
+The plan is not the order. A first order is placed by the person in the app,
+https://app.warminboxes.com; the MCP's sizing result carries a saved plan
+(`order.plan.url`) whose link takes it there. An existing customer who wants
+Claude to place it goes through WarmInboxes Infrastructure MCP with their own
+API key: hand over to the infrastructure-api skill, which covers the key, the
+connection and the preview-then-confirm rule for anything that charges a card.
 
 ## Close
 
