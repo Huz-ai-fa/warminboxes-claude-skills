@@ -15,7 +15,7 @@ WarmInboxes' operators do, with the research behind every call.
 - **When you're ready for your own account**, a second plugin connects it with
   an API key, stored in your system's credential store, never in the chat.
 
-Version 1.3.0, updated 2026-11-11.
+Version 1.3.1, updated 2026-11-18.
 
 ## Install
 
@@ -34,6 +34,15 @@ WarmInboxes Free MCP on its own is also a custom connector at
 `https://warminboxes.com/mcp`, no sign-in.
 
 Then just ask. The skills decide themselves when they apply.
+
+### What is in this repository
+
+| Folder | What it is |
+|---|---|
+| `plugins/warminboxes/` | The `warminboxes` plugin: WarmInboxes Free MCP and the ten skills (in `skills/`) |
+| `plugins/warminboxes-account/` | The `warminboxes-account` plugin: your own account by API key |
+| `.claude-plugin/marketplace.json` | The Claude Code marketplace that lists both |
+| `.cursor-plugin/`, `mcp.json`, `rules/` | The Cursor plugin, which loads the same skills |
 
 ## The skills
 
@@ -233,11 +242,12 @@ Other clients and the `wib` command line: https://docs.warminboxes.com.
 
 ## Skills only, without the plugin
 
-Each skill folder is self-contained. Copy one into `~/.claude/skills/`:
+Each skill folder under `plugins/warminboxes/skills/` is self-contained. Copy
+one into `~/.claude/skills/`:
 
 ```sh
 mkdir -p ~/.claude/skills/domain-audit
-curl -sL https://raw.githubusercontent.com/Huz-ai-fa/warminboxes-claude-skills/main/domain-audit/SKILL.md \
+curl -sL https://raw.githubusercontent.com/Huz-ai-fa/warminboxes-claude-skills/main/plugins/warminboxes/skills/domain-audit/SKILL.md \
   -o ~/.claude/skills/domain-audit/SKILL.md
 ```
 

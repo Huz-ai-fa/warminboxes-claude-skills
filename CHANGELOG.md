@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.1 · 2026-11-18
+
+- Each plugin now has a folder of its own, as the Claude plugin directory
+  requires: `plugins/warminboxes/` (skills under `skills/`) and
+  `plugins/warminboxes-account/`. The marketplace at the root lists both, and
+  the install commands are unchanged.
+- The Cursor plugin stays at the root and loads the same skill folders.
+- The account plugin has the icon and a licence of its own.
+- No change to any skill's instructions.
+
 ## 1.3.0 · 2026-11-11
 
 - Five new skills: `bounce-diagnosis`, `cold-email-copy`, `lead-lists`,
