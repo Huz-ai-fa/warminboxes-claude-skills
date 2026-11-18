@@ -1,7 +1,7 @@
 {
   "name": "warminboxes-account",
   "displayName": "WarmInboxes Account",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connects your own WarmInboxes account to Claude Code through WarmInboxes Infrastructure MCP: follow builds, check billing and nameservers, export finished inboxes to your sequencer, and preview and place orders. Asks for your API key at install and keeps it in your system's secure credential store.",
   "author": {
     "name": "WarmInboxes",
