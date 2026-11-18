@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.2 · 2026-11-18
+
+- The Claude plugin directory reads the `directory` branch, whose root is
+  `plugins/warminboxes` alone; a workflow rebuilds it from main. Version
+  bumped so the directory scans it as a new version. No content change.
+
 ## 1.3.1 · 2026-11-18
 
 - Each plugin now has a folder of its own, as the Claude plugin directory

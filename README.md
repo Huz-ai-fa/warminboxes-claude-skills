@@ -15,7 +15,7 @@ WarmInboxes' operators do, with the research behind every call.
 - **When you're ready for your own account**, a second plugin connects it with
   an API key, stored in your system's credential store, never in the chat.
 
-Version 1.3.1, updated 2026-11-18.
+Version 1.3.2, updated 2026-11-18.
 
 ## Install
 
